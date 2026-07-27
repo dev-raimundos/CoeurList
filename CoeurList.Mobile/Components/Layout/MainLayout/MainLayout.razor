@@ -1,8 +1,7 @@
 @inherits LayoutComponentBase
 @inject ThemeService ThemeService
-@implements IDisposable
 
-<MudThemeProvider @ref="_themeProvider" Theme="AppTheme.Theme" IsDarkMode="ThemeService.IsDarkMode" />
+<MudThemeProvider @ref="_themeProvider" Theme="_themeManager.Theme" IsDarkMode="ThemeService.IsDarkMode" />
 <MudPopoverProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
@@ -10,6 +9,13 @@
 <div class="app-shell">
 
     <div class="status-bar-safe-area"></div>
+
+    <MudThemeManagerButton OnClick="@(() => OpenThemeManager(true))" />
+    <MudThemeManager Open="_themeManagerOpen"
+                     OpenChanged="OpenThemeManager"
+                     Theme="_themeManager"
+                     ThemeChanged="UpdateTheme"
+                     IsDarkMode="ThemeService.IsDarkMode" />
 
     <div class="app-content">
         @Body
@@ -20,6 +26,8 @@
 
 @code {
     private MudThemeProvider _themeProvider = null!;
+    private ThemeManagerTheme _themeManager = new() { Theme = CoeurList.Theme.AppTheme.Theme };
+    private bool _themeManagerOpen;
 
     protected override void OnInitialized()
     {
@@ -32,6 +40,16 @@
         {
             ThemeService.SetDarkMode(await _themeProvider.GetSystemDarkModeAsync());
         }
+    }
+
+    private void OpenThemeManager(bool open)
+    {
+        _themeManagerOpen = open;
+    }
+
+    private void UpdateTheme(ThemeManagerTheme theme)
+    {
+        _themeManager = theme;
     }
 
     public void Dispose()
