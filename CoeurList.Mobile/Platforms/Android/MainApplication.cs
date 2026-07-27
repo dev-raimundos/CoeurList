@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace CoeurList
+namespace CoeurList.Platforms.Android
 {
     [Application]
     public class MainApplication : MauiApplication
