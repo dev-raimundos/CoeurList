@@ -1,13 +1,13 @@
-<MudPaper Square="true" Elevation="8" Class="bottom-bar">
-    <MudGrid Justify="Justify.SpaceEvenly" Spacing="0">
-        <MudItem>
-            <MudIconButton Icon="@Icons.Material.Filled.Home" Color="Color.Primary" Href="" />
-        </MudItem>
-        <MudItem>
-            <MudIconButton Icon="@Icons.Material.Filled.Add" Color="Color.Primary" Href="counter" />
-        </MudItem>
-        <MudItem>
-            <MudIconButton Icon="@Icons.Material.Filled.WbSunny" Color="Color.Primary" Href="weather" />
-        </MudItem>
-    </MudGrid>
-</MudPaper>
+<div class="component-wrapper">
+    <nav class="bottom-nav">
+        <NavLink class="bottom-nav-item" href="" Match="NavLinkMatch.All">
+            <span>Home</span>
+        </NavLink>
+        <NavLink class="bottom-nav-item" href="counter">
+            <span>Counter</span>
+        </NavLink>
+        <NavLink class="bottom-nav-item" href="weather">
+            <span>Weather</span>
+        </NavLink>
+    </nav>
+</div>

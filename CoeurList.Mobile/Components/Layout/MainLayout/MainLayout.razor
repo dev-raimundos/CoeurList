@@ -1,18 +1,41 @@
 @inherits LayoutComponentBase
 
-<MudThemeProvider />
+<MudThemeProvider @ref="_themeProvider" Theme="AppTheme.Theme" @bind-IsDarkMode="_isDarkMode" />
 <MudPopoverProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
 
-<MudLayout>
-    <MudAppBar Elevation="0">
-        <MudText Typo="Typo.h6">CoeurList</MudText>
-    </MudAppBar>
 
-    <MudMainContent Style="padding-bottom: 56px;">
+<div class="app-shell">
+
+    <div class="status-bar-safe-area"></div>
+
+    <button class="theme-toggle" @onclick="ToggleTheme">
+        @(_isDarkMode ? "☀️" : "🌙")
+    </button>
+
+    <div class="app-content">
         @Body
-    </MudMainContent>
+    </div>
 
     <NavMenu />
-</MudLayout>
+</div>
+
+@code {
+    private MudThemeProvider _themeProvider = null!;
+    private bool _isDarkMode;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            _isDarkMode = await _themeProvider.GetSystemDarkModeAsync();
+            StateHasChanged();
+        }
+    }
+
+    private void ToggleTheme()
+    {
+        _isDarkMode = !_isDarkMode;
+    }
+}
