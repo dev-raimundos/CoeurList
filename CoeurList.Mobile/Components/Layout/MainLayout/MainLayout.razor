@@ -1,18 +1,15 @@
 @inherits LayoutComponentBase
+@inject ThemeService ThemeService
+@implements IDisposable
 
-<MudThemeProvider @ref="_themeProvider" Theme="AppTheme.Theme" @bind-IsDarkMode="_isDarkMode" />
+<MudThemeProvider @ref="_themeProvider" Theme="AppTheme.Theme" IsDarkMode="ThemeService.IsDarkMode" />
 <MudPopoverProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
 
-
 <div class="app-shell">
 
     <div class="status-bar-safe-area"></div>
-
-    <button class="theme-toggle" @onclick="ToggleTheme">
-        @(_isDarkMode ? "☀️" : "🌙")
-    </button>
 
     <div class="app-content">
         @Body
@@ -23,19 +20,22 @@
 
 @code {
     private MudThemeProvider _themeProvider = null!;
-    private bool _isDarkMode;
+
+    protected override void OnInitialized()
+    {
+        ThemeService.OnChange += StateHasChanged;
+    }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
-            _isDarkMode = await _themeProvider.GetSystemDarkModeAsync();
-            StateHasChanged();
+            ThemeService.SetDarkMode(await _themeProvider.GetSystemDarkModeAsync());
         }
     }
 
-    private void ToggleTheme()
+    public void Dispose()
     {
-        _isDarkMode = !_isDarkMode;
+        ThemeService.OnChange -= StateHasChanged;
     }
 }

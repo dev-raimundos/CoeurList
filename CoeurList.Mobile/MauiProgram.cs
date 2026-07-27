@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using MudBlazor.Services;
+using CoeurList.Services;
 
 namespace CoeurList
 {
@@ -17,6 +18,7 @@ namespace CoeurList
 
             builder.Services.AddMauiBlazorWebView();
             builder.Services.AddMudServices();
+            builder.Services.AddSingleton<ThemeService>();
 
 #if DEBUG
     		builder.Services.AddBlazorWebViewDeveloperTools();

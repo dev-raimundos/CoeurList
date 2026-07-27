@@ -1,0 +1,8 @@
+@page "/profile"
+@inject ThemeService ThemeService
+
+<h1>Perfil</h1>
+
+<MudSwitch T="bool" Value="ThemeService.IsDarkMode" ValueChanged="ThemeService.SetDarkMode" Color="Color.Primary">
+    Tema escuro
+</MudSwitch>
