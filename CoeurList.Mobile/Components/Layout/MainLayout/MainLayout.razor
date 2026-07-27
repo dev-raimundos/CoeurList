@@ -1,19 +1,18 @@
-﻿@inherits LayoutComponentBase
+@inherits LayoutComponentBase
 
 <MudThemeProvider />
 <MudPopoverProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
 
-<div class="main-layout">
-    <!--Menu bar-->
-    <div class="bottom-bar">
-        <NavMenu />
-    </div>
-    <!--Main Activity Views-->
-    <main>
-        <article class="main-body">
-            @Body
-        </article>
-    </main>
-</div>
+<MudLayout>
+    <MudAppBar Elevation="0">
+        <MudText Typo="Typo.h6">CoeurList</MudText>
+    </MudAppBar>
+
+    <MudMainContent Style="padding-bottom: 56px;">
+        @Body
+    </MudMainContent>
+
+    <NavMenu />
+</MudLayout>
