@@ -5,7 +5,16 @@
     justify-items: baseline;
 }
 
+p {
+    width: 75%;
+    padding-top: 0.5rem;
+    text-align: center;
+    text-justify: auto;
+}
+
 .component-wrapper {
+    display: flex;
+    align-items: center;
     max-width: 75%;
     margin: 0 auto;
 }
