@@ -1,6 +1,6 @@
 <Solution>
   <Project Path="Coeur.Mobile.Application/Coeur.Mobile.Application.csproj" />
-  <Project Path="CoeurList.Mobile.csproj">
+  <Project Path="CoeurList.Mobile/CoeurList.Mobile.csproj">
     <Deploy Solution="Debug|*" />
   </Project>
 </Solution>
