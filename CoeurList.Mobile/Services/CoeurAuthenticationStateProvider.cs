@@ -31,11 +31,10 @@ public class CoeurAuthenticationStateProvider : AuthenticationStateProvider
         var identity = new ClaimsIdentity(
             new[]
             {
-                new Claim(ClaimTypes.NameIdentifier, session.UserId),
                 new Claim(ClaimTypes.Email, session.Email),
-                new Claim(ClaimTypes.Name, session.Name),
+                new Claim(ClaimTypes.Name, session.Email),
             },
-            authenticationType: "Google");
+            authenticationType: "CoeurList");
 
         return new AuthenticationState(new ClaimsPrincipal(identity));
     }

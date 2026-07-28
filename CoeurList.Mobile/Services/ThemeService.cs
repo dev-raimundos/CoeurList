@@ -2,7 +2,7 @@ namespace CoeurList.Services;
 
 public class ThemeService
 {
-    public bool IsDarkMode { get; private set; }
+    public bool IsDarkMode { get; private set; } = true;
 
     public event Action? OnChange;
 

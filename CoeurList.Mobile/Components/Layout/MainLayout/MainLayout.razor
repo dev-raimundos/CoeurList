@@ -2,7 +2,7 @@
 @inject ThemeService ThemeService
 @implements IDisposable
 
-<MudThemeProvider @ref="_themeProvider" Theme="AppTheme.Theme" IsDarkMode="ThemeService.IsDarkMode" />
+<MudThemeProvider Theme="AppTheme.Theme" IsDarkMode="ThemeService.IsDarkMode" />
 <MudPopoverProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
@@ -19,19 +19,9 @@
 </div>
 
 @code {
-    private MudThemeProvider _themeProvider = null!;
-
     protected override void OnInitialized()
     {
         ThemeService.OnChange += StateHasChanged;
-    }
-
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-        {
-            ThemeService.SetDarkMode(await _themeProvider.GetSystemDarkModeAsync());
-        }
     }
 
     public void Dispose()

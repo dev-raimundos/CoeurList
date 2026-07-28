@@ -1,0 +1,4 @@
+.auth-shell {
+    min-height: 100vh;
+    background: linear-gradient(160deg, var(--mud-palette-primary) 0%, var(--mud-palette-primary-darken) 100%);
+}

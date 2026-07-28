@@ -38,18 +38,6 @@
         <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
     </PropertyGroup>
 
-    <!-- Keystore de debug fixo do time: sem isso, cada máquina usa o debug.keystore
-         padrão do Android SDK (~/.android/debug.keystore), com um SHA-1 diferente por
-         dev/CI. Usar este keystore mantém o SHA-1 estável, exigido pelo client OAuth
-         Android do Google. NÃO use este keystore/senha para assinar builds de Release. -->
-    <PropertyGroup Condition="'$(Configuration)'=='Debug'">
-        <AndroidKeyStore>true</AndroidKeyStore>
-        <AndroidSigningKeyStore>debug.keystore</AndroidSigningKeyStore>
-        <AndroidSigningKeyAlias>androiddebugkey</AndroidSigningKeyAlias>
-        <AndroidSigningKeyPass>android</AndroidSigningKeyPass>
-        <AndroidSigningStorePass>android</AndroidSigningStorePass>
-    </PropertyGroup>
-
     <ItemGroup>
         <!-- App Icon -->
         <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
