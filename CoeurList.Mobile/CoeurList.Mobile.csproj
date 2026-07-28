@@ -67,4 +67,8 @@
         <ProjectReference Include="..\Coeur.Mobile.Application\Coeur.Mobile.Application.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Components\Layout\MainLayout\" />
+    </ItemGroup>
+
 </Project>
