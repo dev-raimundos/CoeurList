@@ -8,75 +8,83 @@ public static class AppTheme
     {
         PaletteLight = new PaletteLight
         {
-            // Marca / navegação
-            Primary = "rgba(81,43,212,1)",
-            PrimaryContrastText = "rgba(255,255,255,1)",
-            Secondary = "rgba(255,64,129,1)",
-            SecondaryContrastText = "rgba(255,255,255,1)",
-            Tertiary = "rgba(30,200,165,1)",
-            TertiaryContrastText = "rgba(255,255,255,1)",
+            // Primary
+            Primary = "#512BD4",
+            PrimaryContrastText = "#FFFFFF",
+            PrimaryLighten = "#766AE7",
+            PrimaryDarken = "#3E2CDD",
 
-            // Semânticas (feedback de estado)
-            Info = "rgba(33,150,243,1)",
-            InfoContrastText = "rgba(255,255,255,1)",
-            Success = "rgba(0,200,83,1)",
-            SuccessContrastText = "rgba(255,255,255,1)",
-            Warning = "rgba(255,152,0,1)",
-            WarningContrastText = "rgba(255,255,255,1)",
-            Error = "rgba(244,67,54,1)",
-            ErrorContrastText = "rgba(255,255,255,1)",
+            // Secondary
+            Secondary = "#FF4081",
+            SecondaryContrastText = "#FFFFFF",
+            SecondaryLighten = "#FF6699",
+            SecondaryDarken = "#FF1F69",
+
+            // Tertiary
+            Tertiary = "#1EC8A5",
+            TertiaryContrastText = "#FFFFFF",
+            TertiaryLighten = "#2ADFBB",
+            TertiaryDarken = "#19A98C",
+
+            // Info
+            Info = "#2196F3",
+            InfoContrastText = "#FFFFFF",
+            InfoLighten = "#47A7F5",
+            InfoDarken = "#0C80DF",
+
+            // Success
+            Success = "#00C853",
+            SuccessContrastText = "#FFFFFF",
+            SuccessLighten = "#00EB62",
+            SuccessDarken = "#00A344",
+
+            // Warning
+            Warning = "#FF9800",
+            WarningContrastText = "#FFFFFF",
+            WarningLighten = "#FFA724",
+            WarningDarken = "#D68100",
+
+            // Error
+            Error = "#F44336",
+            ErrorContrastText = "#FFFFFF",
+            ErrorLighten = "#F66055",
+            ErrorDarken = "#F21C0D",
 
             // Base neutra
-            Black = "rgba(39,44,52,1)",
-            White = "rgba(255,255,255,1)",
-            Dark = "rgba(66,66,66,1)",
-            DarkContrastText = "rgba(255,255,255,1)",
+            Black = "#272C34",
+            White = "#FFFFFF",
+            Dark = "#424242",
+            DarkContrastText = "#FFFFFF",
+            DarkLighten = "#575757",
+            DarkDarken = "#2E2E2E",
 
             // Fundos e superfícies
-            Background = "rgba(255,255,255,1)",
-            BackgroundGray = "rgba(245,245,245,1)",
-            Surface = "rgba(255,255,255,1)",
-            AppbarBackground = "rgba(81,43,212,1)",
-            AppbarText = "rgba(255,255,255,1)",
-            DrawerBackground = "rgba(255,255,255,1)",
-            DrawerText = "rgba(66,66,66,1)",
-            DrawerIcon = "rgba(97,97,97,1)",
+            Background = "#FFFFFF",
+            BackgroundGray = "#F5F5F5",
+            Surface = "#FFFFFF",
+            AppbarBackground = "#512BD4",
+            AppbarText = "#FFFFFF",
+            DrawerBackground = "#FFFFFF",
+            DrawerText = "#424242",
+            DrawerIcon = "#616161",
 
             // Texto e estados de ação
-            TextPrimary = "rgba(66,66,66,1)",
-            TextSecondary = "rgba(0,0,0,0.54)",
-            TextDisabled = "rgba(0,0,0,0.38)",
-            ActionDefault = "rgba(0,0,0,0.54)",
-            ActionDisabled = "rgba(0,0,0,0.26)",
-            ActionDisabledBackground = "rgba(0,0,0,0.12)",
+            TextPrimary = "#424242",
+            TextSecondary = "#0000008A",
+            TextDisabled = "#00000061",
+            ActionDefault = "#0000008A",
+            ActionDisabled = "#00000042",
+            ActionDisabledBackground = "#0000001F",
 
             // Linhas, divisores e tabelas
-            Divider = "rgba(224,224,224,1)",
-            DividerLight = "rgba(0,0,0,0.8)",
-            LinesDefault = "rgba(0,0,0,0.12)",
-            LinesInputs = "rgba(189,189,189,1)",
-            TableLines = "rgba(224,224,224,1)",
-            TableStriped = "rgba(0,0,0,0.02)",
-            TableHover = "rgba(0,0,0,0.04)",
-            Skeleton = "rgba(0,0,0,0.11)",
-
-            // Variações claras/escuras derivadas das cores principais
-            PrimaryDarken = "rgb(62,44,221)",
-            PrimaryLighten = "rgb(118,106,231)",
-            SecondaryDarken = "rgb(255,31,105)",
-            SecondaryLighten = "rgb(255,102,153)",
-            TertiaryDarken = "rgb(25,169,140)",
-            TertiaryLighten = "rgb(42,223,187)",
-            InfoDarken = "rgb(12,128,223)",
-            InfoLighten = "rgb(71,167,245)",
-            SuccessDarken = "rgb(0,163,68)",
-            SuccessLighten = "rgb(0,235,98)",
-            WarningDarken = "rgb(214,129,0)",
-            WarningLighten = "rgb(255,167,36)",
-            ErrorDarken = "rgb(242,28,13)",
-            ErrorLighten = "rgb(246,96,85)",
-            DarkDarken = "rgb(46,46,46)",
-            DarkLighten = "rgb(87,87,87)",
+            Divider = "#E0E0E0",
+            DividerLight = "#000000CC",
+            LinesDefault = "#0000001F",
+            LinesInputs = "#BDBDBD",
+            TableLines = "#E0E0E0",
+            TableStriped = "#00000005",
+            TableHover = "#0000000A",
+            Skeleton = "#0000001C",
 
             // Tons de cinza utilitários
             GrayDefault = "#9E9E9E",
@@ -86,8 +94,8 @@ public static class AppTheme
             GrayDarker = "#616161",
 
             // Overlays e opacidades (dialogs, hover, ripple)
-            OverlayDark = "rgba(33,33,33,0.5)",
-            OverlayLight = "rgba(255,255,255,0.5)",
+            OverlayDark = "#21212180",
+            OverlayLight = "#FFFFFF80",
             BorderOpacity = 1,
             HoverOpacity = 0.06,
             RippleOpacity = 0.1,
@@ -95,75 +103,83 @@ public static class AppTheme
         },
         PaletteDark = new PaletteDark
         {
-            // Marca / navegação
-            Primary = "rgba(123,82,245,1)",
-            PrimaryContrastText = "rgba(255,255,255,1)",
-            Secondary = "rgba(255,64,129,1)",
-            SecondaryContrastText = "rgba(255,255,255,1)",
-            Tertiary = "rgba(30,200,165,1)",
-            TertiaryContrastText = "rgba(255,255,255,1)",
+            // Primary
+            Primary = "#7B52F5",
+            PrimaryContrastText = "#FFFFFF",
+            PrimaryLighten = "#978DEC",
+            PrimaryDarken = "#5A4BE2",
 
-            // Semânticas (feedback de estado)
-            Info = "rgba(50,153,255,1)",
-            InfoContrastText = "rgba(255,255,255,1)",
-            Success = "rgba(11,186,131,1)",
-            SuccessContrastText = "rgba(255,255,255,1)",
-            Warning = "rgba(255,168,0,1)",
-            WarningContrastText = "rgba(255,255,255,1)",
-            Error = "rgba(246,78,98,1)",
-            ErrorContrastText = "rgba(255,255,255,1)",
+            // Secondary
+            Secondary = "#FF4081",
+            SecondaryContrastText = "#FFFFFF",
+            SecondaryLighten = "#FF6699",
+            SecondaryDarken = "#FF1F69",
+
+            // Tertiary
+            Tertiary = "#1EC8A5",
+            TertiaryContrastText = "#FFFFFF",
+            TertiaryLighten = "#2ADFBB",
+            TertiaryDarken = "#19A98C",
+
+            // Info
+            Info = "#3299FF",
+            InfoContrastText = "#FFFFFF",
+            InfoLighten = "#5CADFF",
+            InfoDarken = "#0A85FF",
+
+            // Success
+            Success = "#0BBA83",
+            SuccessContrastText = "#FFFFFF",
+            SuccessLighten = "#0DDE9C",
+            SuccessDarken = "#099A6C",
+
+            // Warning
+            Warning = "#FFA800",
+            WarningContrastText = "#FFFFFF",
+            WarningLighten = "#FFB624",
+            WarningDarken = "#D68F00",
+
+            // Error
+            Error = "#F64E62",
+            ErrorContrastText = "#FFFFFF",
+            ErrorLighten = "#F87786",
+            ErrorDarken = "#F42F46",
 
             // Base neutra
-            Black = "rgba(39,39,47,1)",
-            White = "rgba(255,255,255,1)",
-            Dark = "rgba(39,39,47,1)",
-            DarkContrastText = "rgba(255,255,255,1)",
+            Black = "#27272F",
+            White = "#FFFFFF",
+            Dark = "#27272F",
+            DarkContrastText = "#FFFFFF",
+            DarkLighten = "#383843",
+            DarkDarken = "#17171C",
 
             // Fundos e superfícies
-            Background = "rgba(26,26,26,1)",
-            BackgroundGray = "rgba(39,39,47,1)",
-            Surface = "rgba(55,55,64,1)",
-            AppbarBackground = "rgba(26,26,26,1)",
-            AppbarText = "rgba(255,255,255,0.7)",
-            DrawerBackground = "rgba(39,39,47,1)",
-            DrawerText = "rgba(255,255,255,0.5)",
-            DrawerIcon = "rgba(255,255,255,0.5)",
+            Background = "#1A1A1A",
+            BackgroundGray = "#27272F",
+            Surface = "#373740",
+            AppbarBackground = "#1A1A1A",
+            AppbarText = "#FFFFFFB3",
+            DrawerBackground = "#27272F",
+            DrawerText = "#FFFFFF80",
+            DrawerIcon = "#FFFFFF80",
 
             // Texto e estados de ação
-            TextPrimary = "rgba(255,255,255,0.7)",
-            TextSecondary = "rgba(255,255,255,0.5)",
-            TextDisabled = "rgba(255,255,255,0.2)",
-            ActionDefault = "rgba(173,173,177,1)",
-            ActionDisabled = "rgba(255,255,255,0.26)",
-            ActionDisabledBackground = "rgba(255,255,255,0.12)",
+            TextPrimary = "#FFFFFFB3",
+            TextSecondary = "#FFFFFF80",
+            TextDisabled = "#FFFFFF33",
+            ActionDefault = "#ADADB1",
+            ActionDisabled = "#FFFFFF42",
+            ActionDisabledBackground = "#FFFFFF1F",
 
             // Linhas, divisores e tabelas
-            Divider = "rgba(255,255,255,0.12)",
-            DividerLight = "rgba(255,255,255,0.06)",
-            LinesDefault = "rgba(255,255,255,0.12)",
-            LinesInputs = "rgba(255,255,255,0.3)",
-            TableLines = "rgba(255,255,255,0.12)",
-            TableStriped = "rgba(255,255,255,0.2)",
-            TableHover = "rgba(0,0,0,0.04)",
-            Skeleton = "rgba(255,255,255,0.11)",
-
-            // Variações claras/escuras derivadas das cores principais
-            PrimaryDarken = "rgb(90,75,226)",
-            PrimaryLighten = "rgb(151,141,236)",
-            SecondaryDarken = "rgb(255,31,105)",
-            SecondaryLighten = "rgb(255,102,153)",
-            TertiaryDarken = "rgb(25,169,140)",
-            TertiaryLighten = "rgb(42,223,187)",
-            InfoDarken = "rgb(10,133,255)",
-            InfoLighten = "rgb(92,173,255)",
-            SuccessDarken = "rgb(9,154,108)",
-            SuccessLighten = "rgb(13,222,156)",
-            WarningDarken = "rgb(214,143,0)",
-            WarningLighten = "rgb(255,182,36)",
-            ErrorDarken = "rgb(244,47,70)",
-            ErrorLighten = "rgb(248,119,134)",
-            DarkDarken = "rgb(23,23,28)",
-            DarkLighten = "rgb(56,56,67)",
+            Divider = "#FFFFFF1F",
+            DividerLight = "#FFFFFF0F",
+            LinesDefault = "#FFFFFF1F",
+            LinesInputs = "#FFFFFF4D",
+            TableLines = "#FFFFFF1F",
+            TableStriped = "#FFFFFF33",
+            TableHover = "#0000000A",
+            Skeleton = "#FFFFFF1C",
 
             // Tons de cinza utilitários
             GrayDefault = "#9E9E9E",
@@ -173,8 +189,8 @@ public static class AppTheme
             GrayDarker = "#616161",
 
             // Overlays e opacidades (dialogs, hover, ripple)
-            OverlayDark = "rgba(33,33,33,0.5)",
-            OverlayLight = "rgba(255,255,255,0.5)",
+            OverlayDark = "#21212180",
+            OverlayLight = "#FFFFFF80",
             BorderOpacity = 1,
             HoverOpacity = 0.06,
             RippleOpacity = 0.1,
