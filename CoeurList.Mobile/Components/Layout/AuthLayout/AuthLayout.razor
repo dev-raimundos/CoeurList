@@ -1,0 +1,14 @@
+@inherits LayoutComponentBase
+@inject ThemeService ThemeService
+
+<MudThemeProvider Theme="AppTheme.Theme" IsDarkMode="ThemeService.IsDarkMode" />
+<MudPopoverProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<div class="app-shell">
+    <div class="status-bar-safe-area"></div>
+    <div class="app-content">
+        @Body
+    </div>
+</div>

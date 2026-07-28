@@ -1,8 +1,22 @@
 @page "/profile"
 @inject ThemeService ThemeService
+@inject AuthService AuthService
+@inject NavigationManager NavigationManager
 
 <h1>Perfil</h1>
 
 <MudSwitch T="bool" Value="ThemeService.IsDarkMode" ValueChanged="ThemeService.SetDarkMode" Color="Color.Primary">
     Tema escuro
 </MudSwitch>
+
+<MudButton Variant="Variant.Outlined" Color="Color.Error" Class="mt-4" OnClick="LogoutAsync">
+    Sair
+</MudButton>
+
+@code {
+    private async Task LogoutAsync()
+    {
+        await AuthService.LogoutAsync();
+        NavigationManager.NavigateTo("/login", replace: true);
+    }
+}
