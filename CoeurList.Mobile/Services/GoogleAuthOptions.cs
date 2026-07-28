@@ -8,7 +8,7 @@ namespace CoeurList.Services;
 /// </summary>
 public static class GoogleAuthOptions
 {
-    public const string AndroidClientId = "SUBSTITUA_PELO_ANDROID_CLIENT_ID.apps.googleusercontent.com";
+    public const string AndroidClientId = "828733362917-i3d4c8gfojkq331g786ae2vlcrohg4dk.apps.googleusercontent.com";
 
     public const string WindowsClientId = "SUBSTITUA_PELO_DESKTOP_CLIENT_ID.apps.googleusercontent.com";
 
