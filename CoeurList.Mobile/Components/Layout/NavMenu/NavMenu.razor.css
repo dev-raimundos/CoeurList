@@ -15,6 +15,7 @@
     border: 1px solid var(--mud-palette-divider);
     backdrop-filter: blur(18px) saturate(160%);
     -webkit-backdrop-filter: blur(18px) saturate(160%);
+    background-color: aqua;
 }
 
 .bottom-nav-item {
