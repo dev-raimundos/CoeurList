@@ -13,11 +13,13 @@ public class AuthService
     private const string SessionStorageKey = "coeur_auth_session";
 
     private readonly ICoeurApiClient _apiClient;
+    private readonly TokenAccessor _tokenAccessor;
     private readonly Task _initialization;
 
-    public AuthService(ICoeurApiClient apiClient)
+    public AuthService(ICoeurApiClient apiClient, TokenAccessor tokenAccessor)
     {
         _apiClient = apiClient;
+        _tokenAccessor = tokenAccessor;
         _initialization = LoadSessionAsync();
     }
 
@@ -40,6 +42,7 @@ public class AuthService
         var auth = await _apiClient.LoginWithGoogleAsync(idToken);
 
         CurrentSession = new AuthSession(auth.User.Id, auth.User.Name, auth.User.Email, auth.Token);
+        _tokenAccessor.Token = auth.Token;
         await SecureStorage.Default.SetAsync(SessionStorageKey, JsonSerializer.Serialize(CurrentSession));
         OnChange?.Invoke();
         return true;
@@ -48,6 +51,7 @@ public class AuthService
     public Task LogoutAsync()
     {
         CurrentSession = null;
+        _tokenAccessor.Token = null;
         SecureStorage.Default.Remove(SessionStorageKey);
         OnChange?.Invoke();
         return Task.CompletedTask;
@@ -100,6 +104,7 @@ public class AuthService
             if (!string.IsNullOrEmpty(json))
             {
                 CurrentSession = JsonSerializer.Deserialize<AuthSession>(json);
+                _tokenAccessor.Token = CurrentSession?.Token;
             }
         }
         catch
