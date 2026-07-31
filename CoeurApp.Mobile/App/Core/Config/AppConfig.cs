@@ -4,9 +4,7 @@ public static class AppConfig
 {
     public const string ApiBaseUrl = "https://api.coeur.app.br/";
 
-    // TODO: Client ID OAuth do tipo "Android" criado no Google Cloud Console
-    // (Google Cloud Console > APIs & Services > Credentials > Create Credentials > OAuth client ID).
-    public const string GoogleClientId = "SEU_CLIENT_ID.apps.googleusercontent.com";
+    public const string GoogleClientId = "828733362917-fcq7pkkue5oj0mart4mjjg0jlrr5i0ip.apps.googleusercontent.com";
 
     public const string GoogleAuthorizationEndpoint = "https://accounts.google.com/o/oauth2/v2/auth";
     public const string GoogleTokenEndpoint = "https://oauth2.googleapis.com/token";
