@@ -21,7 +21,7 @@
         <MauiXamlInflator>SourceGen</MauiXamlInflator>
 
         <!-- Display name -->
-        <ApplicationTitle>CoeurList</ApplicationTitle>
+        <ApplicationTitle>Coeur</ApplicationTitle>
 
         <!-- App Identifier -->
         <ApplicationId>br.app.coeur</ApplicationId>
