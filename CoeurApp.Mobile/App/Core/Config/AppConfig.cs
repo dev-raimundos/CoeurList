@@ -1,10 +1,8 @@
-namespace CoeurList.Config;
+namespace CoeurList.App.Core.Config;
 
 public static class AppConfig
 {
-    // TODO: trocar pelo endereço real do CoeurApi (em dev, o IP da máquina rodando a API
-    // — "localhost" não funciona a partir do emulador/dispositivo Android).
-    public const string ApiBaseUrl = "https://SEU_HOST_DA_API/";
+    public const string ApiBaseUrl = "https://api.coeur.app.br/";
 
     // TODO: Client ID OAuth do tipo "Android" criado no Google Cloud Console
     // (Google Cloud Console > APIs & Services > Credentials > Create Credentials > OAuth client ID).

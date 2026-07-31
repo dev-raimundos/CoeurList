@@ -1,4 +1,4 @@
-namespace CoeurList.Services;
+namespace Coeur.Mobile.Application.Http;
 
 public class TokenAccessor
 {

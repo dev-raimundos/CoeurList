@@ -3,10 +3,10 @@ using System.Text.Json;
 using System.Web;
 using Coeur.Mobile.Application.Authentication;
 using Coeur.Mobile.Application.Http;
-using CoeurList.Config;
+using CoeurList.App.Core.Config;
 using Microsoft.Maui.Authentication;
 
-namespace CoeurList.Services;
+namespace CoeurList.App.Core.Services;
 
 public class AuthService
 {

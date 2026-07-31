@@ -1,6 +1,6 @@
 using MudBlazor;
 
-namespace CoeurList.Theme;
+namespace CoeurList.App.Core.Theme;
 
 public static class AppTheme
 {

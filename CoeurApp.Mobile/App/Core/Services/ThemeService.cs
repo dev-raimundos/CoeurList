@@ -1,4 +1,4 @@
-namespace CoeurList.Services;
+namespace CoeurList.App.Core.Services;
 
 public class ThemeService
 {

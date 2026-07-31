@@ -24,7 +24,7 @@
         <ApplicationTitle>CoeurList</ApplicationTitle>
 
         <!-- App Identifier -->
-        <ApplicationId>com.companyname.coeurlist</ApplicationId>
+        <ApplicationId>br.app.coeur</ApplicationId>
 
         <!-- Versions -->
         <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>

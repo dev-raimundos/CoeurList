@@ -1,7 +1,7 @@
 using Android.App;
 using Android.Content;
 using Android.Content.PM;
-using CoeurList.Config;
+using CoeurList.App.Core.Config;
 
 namespace CoeurList.Platforms.Android;
 

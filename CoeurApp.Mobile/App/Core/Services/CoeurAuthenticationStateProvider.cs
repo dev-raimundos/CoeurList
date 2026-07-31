@@ -1,7 +1,7 @@
 using System.Security.Claims;
 using Microsoft.AspNetCore.Components.Authorization;
 
-namespace CoeurList.Services;
+namespace CoeurList.App.Core.Services;
 
 public class CoeurAuthenticationStateProvider : AuthenticationStateProvider
 {

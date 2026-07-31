@@ -2,7 +2,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using AndroidX.Core.View;
-using CoeurList.Services;
+using CoeurList.App.Core.Services;
 
 namespace CoeurList.Platforms.Android
 {

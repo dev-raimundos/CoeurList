@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.Extensions.Logging;
 using MudBlazor.Services;
 using Coeur.Mobile.Application.Http;
-using CoeurList.Config;
-using CoeurList.Services;
+using CoeurList.App.Core.Config;
+using CoeurList.App.Core.Services;
 
 namespace CoeurList
 {
@@ -31,6 +31,7 @@ namespace CoeurList
                     .Build();
             });
             builder.Services.AddScoped<AuthenticationStateProvider, CoeurAuthenticationStateProvider>();
+            builder.Services.AddSingleton<TokenAccessor>();
             builder.Services.AddSingleton<AuthService>();
             builder.Services.AddTransient<BearerTokenHandler>();
             builder.Services.AddHttpClient<ICoeurApiClient, CoeurApiClient>(client =>

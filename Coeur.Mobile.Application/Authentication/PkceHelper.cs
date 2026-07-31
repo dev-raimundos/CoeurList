@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace CoeurList.Services;
+namespace Coeur.Mobile.Application.Authentication;
 
 public static class PkceHelper
 {

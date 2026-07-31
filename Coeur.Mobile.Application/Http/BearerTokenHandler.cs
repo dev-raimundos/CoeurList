@@ -1,6 +1,6 @@
 using System.Net.Http.Headers;
 
-namespace CoeurList.Services;
+namespace Coeur.Mobile.Application.Http;
 
 public class BearerTokenHandler(TokenAccessor tokenAccessor) : DelegatingHandler
 {
