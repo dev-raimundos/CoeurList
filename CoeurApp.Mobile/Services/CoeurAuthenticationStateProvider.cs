@@ -31,8 +31,9 @@ public class CoeurAuthenticationStateProvider : AuthenticationStateProvider
         var identity = new ClaimsIdentity(
             new[]
             {
+                new Claim(ClaimTypes.NameIdentifier, session.UserId.ToString()),
                 new Claim(ClaimTypes.Email, session.Email),
-                new Claim(ClaimTypes.Name, session.Email),
+                new Claim(ClaimTypes.Name, session.Name),
             },
             authenticationType: "CoeurList");
 

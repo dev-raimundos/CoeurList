@@ -1,8 +1,8 @@
 ﻿namespace CoeurList
 {
-    public partial class App : Application
+    public partial class CoeurApplication : Application
     {
-        public App()
+        public CoeurApplication()
         {
             InitializeComponent();
         }

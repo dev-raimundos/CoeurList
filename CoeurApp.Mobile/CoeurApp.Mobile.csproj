@@ -58,6 +58,7 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="10.0.10" />
+        <PackageReference Include="Microsoft.Extensions.Http" Version="10.0.10" />
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
@@ -69,7 +70,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Components\Layout\MainLayout\" />
+      <Folder Include="App\Shared\" />
     </ItemGroup>
 
 </Project>

@@ -1,0 +1,69 @@
+@page "/login"
+@layout AuthLayout
+@attribute [AllowAnonymous]
+@inject AuthService AuthService
+@inject NavigationManager NavigationManager
+
+<div class="login-page">
+    <MudPaper Class="login-card pa-8" Elevation="8">
+        <div class="login-brand">
+            <div class="login-brand-icon">
+                <MudIcon Icon="@Icons.Material.Rounded.Favorite" Size="Size.Large" />
+            </div>
+            <MudText Typo="Typo.h4" Class="login-title">CoeurList</MudText>
+            <MudText Typo="Typo.body2" Class="login-subtitle">Entre para continuar</MudText>
+        </div>
+
+        @if (_errorMessage is not null)
+        {
+            <MudAlert Severity="Severity.Error" Class="my-4" Dense="true">@_errorMessage</MudAlert>
+        }
+
+        <MudButton Variant="Variant.Filled"
+                   Color="Color.Primary"
+                   FullWidth="true"
+                   Size="Size.Large"
+                   Class="login-submit mt-6"
+                   StartIcon="@Icons.Custom.Brands.Google"
+                   Disabled="_isLoading"
+                   OnClick="SubmitAsync">
+            @if (_isLoading)
+            {
+                <MudProgressCircular Size="Size.Small" Indeterminate="true" Class="mr-2" />
+            }
+            Entrar com Google
+        </MudButton>
+    </MudPaper>
+</div>
+
+@code {
+    private bool _isLoading;
+    private string? _errorMessage;
+
+    private async Task SubmitAsync()
+    {
+        _isLoading = true;
+        _errorMessage = null;
+
+        try
+        {
+            var success = await AuthService.LoginWithGoogleAsync();
+            if (success)
+            {
+                NavigationManager.NavigateTo("/", replace: true);
+            }
+            else
+            {
+                _errorMessage = "Não foi possível entrar com o Google. Tente novamente.";
+            }
+        }
+        catch (Exception)
+        {
+            _errorMessage = "Não foi possível entrar com o Google. Tente novamente.";
+        }
+        finally
+        {
+            _isLoading = false;
+        }
+    }
+}
