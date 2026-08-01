@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="CoeurMobile.Application/CoeurMobile.Application.csproj" />
+  <Project Path="CoeurMobile/CoeurMobile.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
+</Solution>
