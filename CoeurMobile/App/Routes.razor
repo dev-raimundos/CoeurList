@@ -1,4 +1,11 @@
-﻿<CascadingAuthenticationState>
+﻿@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.Routing
+@using CoeurMobile
+@using CoeurMobile.App.Core.Components.NotFound
+@using CoeurMobile.App.Core.Layout.MainLayout
+@using CoeurMobile.App.Modules.Auth
+
+<CascadingAuthenticationState>
     <Router AppAssembly="typeof(MauiProgram).Assembly" NotFoundPage="typeof(NotFound)">
         <Found Context="routeData">
             <AuthorizeRouteView RouteData="routeData" DefaultLayout="typeof(MainLayout)">

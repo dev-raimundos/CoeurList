@@ -1,37 +1,36 @@
-# CoeurList
+# CoeurMobile
 
 Aplicativo mobile de planejamento financeiro pessoal, com foco principal na plataforma **Android**. Construído com **.NET MAUI Blazor Hybrid**, consome a API **CoeurApi** (backend em ASP.NET Core) para autenticação e persistência dos dados financeiros do usuário.
 
 ## Estrutura do repositório
 
 ```
-CoeurList/
-├── CoeurList.slnx                     # Solução (.NET solution file, formato .slnx)
-├── CoeurList.Mobile/                  # App MAUI Blazor Hybrid (UI, telas, recursos da plataforma)
-│   ├── Components/                    # Páginas e layouts Razor (Blazor)
-│   ├── Platforms/                     # Código específico de cada plataforma (Android, iOS, MacCatalyst, Windows)
+CoeurMobile/
+├── CoeurMobile.slnx                   # Solução (.NET solution file, formato .slnx)
+├── CoeurMobile/                       # App MAUI Blazor Hybrid (UI, telas, recursos da plataforma)
+│   ├── App/
+│   │   ├── Core/                      # Layouts, componentes, config, tema e serviços transversais
+│   │   └── Modules/                   # Módulos de feature (ex.: Auth) com suas páginas e layouts
+│   ├── Platforms/                     # Código específico de cada plataforma (Android, Windows)
 │   ├── Resources/                     # Ícones, splash screen, fontes, imagens
 │   └── wwwroot/                       # Assets estáticos servidos ao BlazorWebView
-└── Coeur.Mobile.Application/          # Class library com a lógica de aplicação
+└── CoeurMobile.Application/           # Class library com a lógica de aplicação
     ├── Authentication/                # Autenticação/sessão do usuário
     ├── DTOs/                          # Contratos (Requests/Responses) trocados com a CoeurApi
-    ├── Http/                          # Cliente HTTP e configuração de acesso à API
-    └── Services/                      # Regras de negócio e orquestração de chamadas à API
+    └── Http/                          # Cliente HTTP e configuração de acesso à API
 ```
 
-`CoeurList.Mobile` referencia `Coeur.Mobile.Application` via `ProjectReference` — a lib concentra a lógica de integração com o backend, mantendo a camada de UI mais enxuta.
+`CoeurMobile` referencia `CoeurMobile.Application` via `ProjectReference` — a lib concentra a lógica de integração com o backend, mantendo a camada de UI mais enxuta.
 
 ## Backend
 
-O app consome a **CoeurApi**, uma aplicação ASP.NET Core mantida em repositório separado. O `CoeurList.Mobile` não expõe nenhuma lógica de negócio própria além da UI: toda comunicação com a API passa pelo `Coeur.Mobile.Application`.
+O app consome a **CoeurApi**, uma aplicação ASP.NET Core mantida em repositório separado. O `CoeurMobile` não expõe nenhuma lógica de negócio própria além da UI: toda comunicação com a API passa pelo `CoeurMobile.Application`.
 
 ## Plataformas suportadas
 
-Definidas em `CoeurList.Mobile.csproj`:
+Definidas em `CoeurMobile.csproj`:
 
 - **Android** (`net10.0-android`) — plataforma alvo principal
-- iOS (`net10.0-ios`)
-- Mac Catalyst (`net10.0-maccatalyst`)
 - Windows (`net10.0-windows10.0.19041.0`), como app não empacotada (`WindowsPackageType=None`)
 
 ## Pré-requisitos
@@ -45,14 +44,14 @@ Definidas em `CoeurList.Mobile.csproj`:
 
 ## Build
 
-Abra `CoeurList.slnx` no Visual Studio, ou compile via CLI:
+Abra `CoeurMobile.slnx` no Visual Studio, ou compile via CLI:
 
 ```bash
 # Android
-dotnet build CoeurList.Mobile/CoeurList.Mobile.csproj -f net10.0-android
+dotnet build CoeurMobile/CoeurMobile.csproj -f net10.0-android
 
 # Windows
-dotnet build CoeurList.Mobile/CoeurList.Mobile.csproj -f net10.0-windows10.0.19041.0
+dotnet build CoeurMobile/CoeurMobile.csproj -f net10.0-windows10.0.19041.0
 ```
 
 ## Status
