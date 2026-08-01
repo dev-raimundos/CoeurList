@@ -29,7 +29,7 @@
     color: var(--mud-palette-text-secondary);
     text-decoration: none;
     font-size: 0.7rem;
-    font-weight: 500;
+    font-weight: bold;
     padding: 0.45rem 0.25rem;
     border-radius: 999px;
     overflow: hidden;
