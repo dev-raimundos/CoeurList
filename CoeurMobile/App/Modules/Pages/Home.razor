@@ -1,3 +1,88 @@
 @page "/"
+@using MudBlazor
+@using CoeurMobile.App.Core.Services
+@inject ThemeService ThemeService
 
-<h1>Home</h1>
+<MudText Typo="Typo.h4" Class="mb-2">Paleta de Cores</MudText>
+
+<MudSwitch T="bool" Value="ThemeService.IsDarkMode" ValueChanged="ThemeService.SetDarkMode" Color="Color.Primary" Class="mb-6">
+    Tema escuro
+</MudSwitch>
+
+<MudText Typo="Typo.subtitle1" Class="mb-2">Cores principais</MudText>
+<MudGrid Spacing="3" Class="mb-6">
+    @foreach (var swatch in MainSwatches)
+    {
+        <MudItem xs="6" sm="4">
+            <MudPaper Elevation="2"
+                      Class="pa-4 d-flex align-center justify-center"
+                      Style="@($"height:96px;border-radius:12px;background-color:var({swatch.Bg});color:var({swatch.Text});")">
+                <MudText Typo="Typo.subtitle2">@swatch.Name</MudText>
+            </MudPaper>
+        </MudItem>
+    }
+</MudGrid>
+
+<MudText Typo="Typo.subtitle1" Class="mb-2">Tons (lighten / base / darken)</MudText>
+@foreach (var row in ToneRows)
+{
+    <MudText Typo="Typo.body2" Class="mt-3 mb-1">@row.Label</MudText>
+    <MudGrid Spacing="2">
+        @foreach (var shade in row.Shades)
+        {
+            <MudItem xs="4" Class="d-flex flex-column align-center">
+                <div style="@($"height:56px;width:100%;border-radius:8px;background-color:var({shade.ColorVar});")"></div>
+                <MudText Typo="Typo.caption" Class="mt-1">@shade.Name</MudText>
+            </MudItem>
+        }
+    </MudGrid>
+}
+
+<MudText Typo="Typo.subtitle1" Class="mt-6 mb-2">Superfícies</MudText>
+<MudGrid Spacing="3">
+    @foreach (var swatch in SurfaceSwatches)
+    {
+        <MudItem xs="6" sm="4">
+            <MudPaper Outlined="true"
+                      Class="pa-4 d-flex align-center justify-center"
+                      Style="@($"height:96px;border-radius:12px;background-color:var({swatch.Bg});color:var({swatch.Text});")">
+                <MudText Typo="Typo.subtitle2">@swatch.Name</MudText>
+            </MudPaper>
+        </MudItem>
+    }
+</MudGrid>
+
+@code {
+    private sealed record Swatch(string Name, string Bg, string Text);
+
+    private sealed record Shade(string Name, string ColorVar);
+
+    private sealed record ToneRow(string Label, Shade[] Shades);
+
+    private static readonly Swatch[] MainSwatches =
+    [
+        new("Primary", "--mud-palette-primary", "--mud-palette-primary-text"),
+        new("Secondary", "--mud-palette-secondary", "--mud-palette-secondary-text"),
+        new("Tertiary", "--mud-palette-tertiary", "--mud-palette-tertiary-text"),
+        new("Error", "--mud-palette-error", "--mud-palette-error-text"),
+        new("Info", "--mud-palette-info", "--mud-palette-info-text"),
+        new("Success", "--mud-palette-success", "--mud-palette-success-text"),
+        new("Warning", "--mud-palette-warning", "--mud-palette-warning-text"),
+    ];
+
+    private static readonly Swatch[] SurfaceSwatches =
+    [
+        new("Background", "--mud-palette-background", "--mud-palette-text-primary"),
+        new("Surface", "--mud-palette-surface", "--mud-palette-text-primary"),
+        new("App Bar", "--mud-palette-appbar-background", "--mud-palette-appbar-text"),
+        new("Drawer", "--mud-palette-drawer-background", "--mud-palette-drawer-text"),
+    ];
+
+    private static readonly ToneRow[] ToneRows =
+    [
+        new("Primary", [new("Lighten", "--mud-palette-primary-lighten"), new("Base", "--mud-palette-primary"), new("Darken", "--mud-palette-primary-darken")]),
+        new("Secondary", [new("Lighten", "--mud-palette-secondary-lighten"), new("Base", "--mud-palette-secondary"), new("Darken", "--mud-palette-secondary-darken")]),
+        new("Tertiary", [new("Lighten", "--mud-palette-tertiary-lighten"), new("Base", "--mud-palette-tertiary"), new("Darken", "--mud-palette-tertiary-darken")]),
+        new("Error", [new("Lighten", "--mud-palette-error-lighten"), new("Base", "--mud-palette-error"), new("Darken", "--mud-palette-error-darken")]),
+    ];
+}
