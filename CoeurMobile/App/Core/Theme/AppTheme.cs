@@ -8,11 +8,11 @@ public static class AppTheme
     {
         PaletteLight = new PaletteLight
         {
-            // Primary (md-sys-color-primary)
-            Primary = "#8A5022",
+            // Primary (md-sys-color-tertiary)
+            Primary = "#5F6135",
             PrimaryContrastText = "#FFFFFF",
-            PrimaryLighten = "#FFDCC6",
-            PrimaryDarken = "#6E390C",
+            PrimaryLighten = "#E5E6AE",
+            PrimaryDarken = "#47491F",
 
             // Secondary (md-sys-color-secondary)
             Secondary = "#755845",
@@ -20,11 +20,11 @@ public static class AppTheme
             SecondaryLighten = "#FFDCC6",
             SecondaryDarken = "#5B412F",
 
-            // Tertiary (md-sys-color-tertiary)
-            Tertiary = "#5F6135",
+            // Tertiary (md-sys-color-primary)
+            Tertiary = "#8A5022",
             TertiaryContrastText = "#FFFFFF",
-            TertiaryLighten = "#E5E6AE",
-            TertiaryDarken = "#47491F",
+            TertiaryLighten = "#FFDCC6",
+            TertiaryDarken = "#6E390C",
 
             // Info
             Info = "#2196F3",
@@ -44,8 +44,8 @@ public static class AppTheme
             WarningLighten = "#FFA724",
             WarningDarken = "#D68100",
 
-            // Error (md-sys-color-error)
-            Error = "#BA1A1A",
+            // Error (md-sys-color-error, ajustado para tom mais avermelhado)
+            Error = "#D32F2F",
             ErrorContrastText = "#FFFFFF",
             ErrorLighten = "#FFDAD6",
             ErrorDarken = "#93000A",
@@ -62,7 +62,7 @@ public static class AppTheme
             Background = "#FFF8F5",
             BackgroundGray = "#FBEBE2",
             Surface = "#FFF8F5",
-            AppbarBackground = "#8A5022",
+            AppbarBackground = "#5F6135",
             AppbarText = "#FFFFFF",
             DrawerBackground = "#FFF1EA",
             DrawerText = "#221A15",
@@ -103,11 +103,11 @@ public static class AppTheme
         },
         PaletteDark = new PaletteDark
         {
-            // Primary (md-sys-color-primary)
-            Primary = "#FFB785",
-            PrimaryContrastText = "#502500",
-            PrimaryLighten = "#FFDCC6",
-            PrimaryDarken = "#6E390C",
+            // Primary (md-sys-color-tertiary)
+            Primary = "#C8CA94",
+            PrimaryContrastText = "#31320B",
+            PrimaryLighten = "#E5E6AE",
+            PrimaryDarken = "#47491F",
 
             // Secondary (md-sys-color-secondary)
             Secondary = "#E4BFA8",
@@ -115,11 +115,11 @@ public static class AppTheme
             SecondaryLighten = "#FFDCC6",
             SecondaryDarken = "#5B412F",
 
-            // Tertiary (md-sys-color-tertiary)
-            Tertiary = "#C8CA94",
-            TertiaryContrastText = "#31320B",
-            TertiaryLighten = "#E5E6AE",
-            TertiaryDarken = "#47491F",
+            // Tertiary (md-sys-color-primary)
+            Tertiary = "#FFB785",
+            TertiaryContrastText = "#502500",
+            TertiaryLighten = "#FFDCC6",
+            TertiaryDarken = "#6E390C",
 
             // Info
             Info = "#3299FF",
@@ -139,8 +139,8 @@ public static class AppTheme
             WarningLighten = "#FFB624",
             WarningDarken = "#D68F00",
 
-            // Error (md-sys-color-error)
-            Error = "#FFB4AB",
+            // Error (md-sys-color-error, ajustado para tom mais avermelhado)
+            Error = "#FF5449",
             ErrorContrastText = "#690005",
             ErrorLighten = "#FFDAD6",
             ErrorDarken = "#93000A",
@@ -154,7 +154,7 @@ public static class AppTheme
             DarkDarken = "#17171C",
 
             // Fundos e superfícies (md-sys-color-background / surface)
-            Background = "#19120D",
+            Background = "#000000",
             BackgroundGray = "#261E19",
             Surface = "#19120D",
             AppbarBackground = "#19120D",
