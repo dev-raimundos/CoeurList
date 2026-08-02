@@ -1,11 +1,7 @@
 @using CoeurMobile.App.Core.Layout.Components
-@using Microsoft.AspNetCore.Components
 @using MudBlazor
-@using CoeurMobile.App.Core.Services
 @using CoeurMobile.App.Core.Theme
 @inherits LayoutComponentBase
-@inject ThemeService ThemeService
-@implements IDisposable
 
 <MudThemeProvider Theme="AppTheme.Theme" IsDarkMode="ThemeService.IsDarkMode" />
 <MudPopoverProvider />
@@ -22,15 +18,3 @@
 
     <NavMenu />
 </div>
-
-@code {
-    protected override void OnInitialized()
-    {
-        ThemeService.OnChange += StateHasChanged;
-    }
-
-    public void Dispose()
-    {
-        ThemeService.OnChange -= StateHasChanged;
-    }
-}
