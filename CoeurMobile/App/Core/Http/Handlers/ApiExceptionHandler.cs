@@ -1,3 +1,4 @@
+using System.Net;
 using System.Net.Http.Json;
 using System.Text.Json.Serialization;
 using CoeurMobile.App.Core.Http.Client;
@@ -9,9 +10,11 @@ namespace CoeurMobile.App.Core.Http.Handlers;
 /// Segundo <see cref="DelegatingHandler"/> do pipeline (roda depois do <see cref="BearerTokenHandler"/>, ver
 /// a ordem em <c>MauiProgram.cs</c>). É o equivalente ao interceptor de erros do Angular: centraliza o
 /// tratamento de qualquer chamada HTTP que falhe, disparando um toast — assim nenhuma tela/componente
-/// precisa saber ler <c>ProblemDetails</c> nem decidir qual mensagem mostrar.
+/// precisa saber ler <c>ProblemDetails</c> nem decidir qual mensagem mostrar. Também é quem detecta um token
+/// morto (<c>401</c>) e avisa o <see cref="TokenAccessor"/>, que por sua vez aciona o logout automático no
+/// <c>AuthService</c> — fechando o "guard" de navegação pra sessões com token expirado.
 /// </summary>
-public class ApiExceptionHandler(IToastService toastService) : DelegatingHandler
+public class ApiExceptionHandler(IToastService toastService, TokenAccessor tokenAccessor) : DelegatingHandler
 {
     /// <summary>
     /// Deixa o request seguir (<c>base.SendAsync</c>) e depois confere o resultado: se a rede falhar
@@ -38,6 +41,13 @@ public class ApiExceptionHandler(IToastService toastService) : DelegatingHandler
         if (response.IsSuccessStatusCode)
         {
             return response;
+        }
+
+        if (response.StatusCode == HttpStatusCode.Unauthorized)
+        {
+            // Token salvo não é mais válido (expirou ou foi revogado) — força o logout, que por sua vez
+            // aciona o guard de navegação (AuthorizeRouteView) a redirecionar pro login.
+            tokenAccessor.NotifyUnauthorized();
         }
 
         ProblemDetailsPayload? problem = null;

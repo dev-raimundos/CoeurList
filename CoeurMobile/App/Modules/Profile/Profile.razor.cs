@@ -6,6 +6,13 @@ namespace CoeurMobile.App.Modules.Profile;
 
 public partial class Profile
 {
+    private const string BuildConfiguration =
+#if DEBUG
+        "Debug";
+#else
+        "Release";
+#endif
+
     [Inject]
     protected ThemeService ThemeService { get; set; } = default!;
 

@@ -18,6 +18,11 @@ public class AuthService
         _tokenAccessor = tokenAccessor;
         _sessionStore = sessionStore;
         _initialization = LoadSessionAsync();
+
+        // Se algum request voltar 401, o token salvo está morto — desloga sozinho, sem precisar de
+        // interação do usuário. AuthService vive pra sempre (Singleton), então não há necessidade de
+        // desinscrever este handler.
+        _tokenAccessor.OnUnauthorized += () => _ = LogoutAsync();
     }
 
     public AuthSession? CurrentSession { get; private set; }
