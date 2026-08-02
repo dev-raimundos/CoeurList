@@ -1,6 +1,6 @@
 using System.Net.Http.Json;
 using System.Text.Json.Serialization;
-using CoeurMobile.App.Modules.Auth.Services;
+using CoeurMobile.App.Modules.Auth.Dtos;
 
 namespace CoeurMobile.App.Core.Http;
 

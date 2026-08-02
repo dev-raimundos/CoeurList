@@ -1,4 +1,4 @@
-namespace CoeurMobile.App.Modules.Auth.Services;
+namespace CoeurMobile.App.Modules.Auth.Validation;
 
 public static class EmailValidator
 {

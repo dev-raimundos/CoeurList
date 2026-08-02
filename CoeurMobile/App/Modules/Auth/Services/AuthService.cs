@@ -1,5 +1,7 @@
 using System.Text.Json;
 using CoeurMobile.App.Core.Http;
+using CoeurMobile.App.Modules.Auth.Dtos;
+using CoeurMobile.App.Modules.Auth.Models;
 
 namespace CoeurMobile.App.Modules.Auth.Services;
 

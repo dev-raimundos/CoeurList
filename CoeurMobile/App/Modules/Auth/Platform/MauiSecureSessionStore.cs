@@ -1,4 +1,6 @@
-namespace CoeurMobile.App.Modules.Auth.Services;
+using CoeurMobile.App.Modules.Auth.Services;
+
+namespace CoeurMobile.App.Modules.Auth.Platform;
 
 public class MauiSecureSessionStore : ISecureSessionStore
 {

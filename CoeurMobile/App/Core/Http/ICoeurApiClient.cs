@@ -1,4 +1,4 @@
-using CoeurMobile.App.Modules.Auth.Services;
+using CoeurMobile.App.Modules.Auth.Dtos;
 
 namespace CoeurMobile.App.Core.Http;
 
