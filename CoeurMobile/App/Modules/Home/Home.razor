@@ -1,2 +1,48 @@
 @page "/"
 @page "/home"
+@using MudBlazor
+
+<MudText Typo="Typo.h4" Class="mb-1">Olá, @(AuthService.CurrentSession?.Name ?? "visitante").</MudText>
+<MudText Typo="Typo.body2" Class="mb-6" Style="opacity:0.7;">Bem-vindo de volta.</MudText>
+
+<MudText Typo="Typo.subtitle1" Class="mb-2">Botões</MudText>
+<MudStack Row="true" Wrap="Wrap.Wrap" Spacing="2" AlignItems="AlignItems.Center" Class="mb-6">
+    <MudButton Variant="Variant.Filled" Color="Color.Primary">Filled</MudButton>
+    <MudButton Variant="Variant.Outlined" Color="Color.Secondary">Outlined</MudButton>
+    <MudButton Variant="Variant.Text" Color="Color.Tertiary">Text</MudButton>
+    <MudIconButton Icon="@Icons.Material.Filled.Favorite" Color="Color.Error" />
+    <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" Size="Size.Small" />
+</MudStack>
+
+<MudText Typo="Typo.subtitle1" Class="mb-2">Entrada de dados</MudText>
+<MudTextField T="string" Label="Nome" Class="mb-3" />
+<MudCheckBox T="bool" Label="Aceito os termos" Class="mb-1" />
+<MudRadioGroup T="string" Class="mb-3">
+    <MudRadio T="string" Value="@("a")">Opção A</MudRadio>
+    <MudRadio T="string" Value="@("b")">Opção B</MudRadio>
+</MudRadioGroup>
+<MudSwitch T="bool" Label="Notificações" Color="Color.Primary" Class="mb-3" />
+<MudSlider T="int" Min="0" Max="100" Value="50" Class="mb-6">Volume</MudSlider>
+
+<MudText Typo="Typo.subtitle1" Class="mb-2">Feedback</MudText>
+<MudAlert Severity="Severity.Info" Class="mb-3">Isso é um alerta informativo.</MudAlert>
+<MudProgressLinear Color="Color.Primary" Value="60" Class="mb-4" />
+<MudStack Row="true" Spacing="4" AlignItems="AlignItems.Center" Class="mb-4">
+    <MudProgressCircular Color="Color.Secondary" Indeterminate="true" />
+    <MudChip T="string" Color="Color.Primary">Chip</MudChip>
+    <MudBadge Content="5" Color="Color.Error" Overlap="true">
+        <MudIcon Icon="@Icons.Material.Filled.Notifications" />
+    </MudBadge>
+</MudStack>
+<MudRating SelectedValue="3" Class="mb-6" />
+
+<MudText Typo="Typo.subtitle1" Class="mb-2">Card</MudText>
+<MudCard Class="mb-6">
+    <MudCardContent>
+        <MudText Typo="Typo.h6">Título do Card</MudText>
+        <MudText Typo="Typo.body2">Conteúdo de exemplo pra testar o MudCard no Android.</MudText>
+    </MudCardContent>
+    <MudCardActions>
+        <MudButton Variant="Variant.Text" Color="Color.Primary">Ação</MudButton>
+    </MudCardActions>
+</MudCard>
