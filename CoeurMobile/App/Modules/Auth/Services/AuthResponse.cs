@@ -1,4 +1,4 @@
-namespace CoeurMobile.Application.DTOs.Responses;
+namespace CoeurMobile.App.Modules.Auth.Services;
 
 public sealed record UserResponse(Guid Id, string Name, string Email);
 

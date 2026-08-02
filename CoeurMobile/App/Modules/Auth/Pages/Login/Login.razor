@@ -1,0 +1,58 @@
+@page "/login"
+@layout AuthLayout
+@attribute [AllowAnonymous]
+@using Microsoft.AspNetCore.Authorization
+@using MudBlazor
+@using CoeurMobile.App.Modules.Auth.Layouts.AuthLayout
+
+<div class="login-page">
+    <MudPaper Class="login-card pa-8" Elevation="8">
+        <div class="login-brand">
+            <div class="login-brand-icon">
+                <MudIcon Icon="@Icons.Material.Rounded.Favorite" Size="Size.Large" />
+            </div>
+            <MudText Typo="Typo.h4" Class="login-title">CoeurMobile</MudText>
+            <MudText Typo="Typo.body2" Class="login-subtitle">Entre para continuar</MudText>
+        </div>
+
+        @if (_errorMessage is not null)
+        {
+            <MudAlert Severity="Severity.Error" Class="mb-4" Dense="true">@_errorMessage</MudAlert>
+        }
+
+        <MudForm @ref="_form" Model="this">
+            <MudTextField T="string"
+                          @bind-Value="_email"
+                          Label="Email"
+                          InputType="InputType.Email"
+                          Required="true"
+                          RequiredError="Informe seu email."
+                          Validation="@(new Func<string, string?>(ValidateEmail))"
+                          Class="mb-4" />
+
+            <MudTextField T="string"
+                          @bind-Value="_password"
+                          Label="Senha"
+                          InputType="@_passwordInputType"
+                          Adornment="Adornment.End"
+                          AdornmentIcon="@_passwordAdornmentIcon"
+                          OnAdornmentClick="TogglePasswordVisibility"
+                          Required="true"
+                          RequiredError="Informe sua senha." />
+        </MudForm>
+
+        <MudButton Variant="Variant.Filled"
+                   Color="Color.Primary"
+                   FullWidth="true"
+                   Size="Size.Large"
+                   Class="login-submit mt-6"
+                   Disabled="_isLoading"
+                   OnClick="SubmitAsync">
+            @if (_isLoading)
+            {
+                <MudProgressCircular Size="Size.Small" Indeterminate="true" Class="mr-2" />
+            }
+            Entrar
+        </MudButton>
+    </MudPaper>
+</div>

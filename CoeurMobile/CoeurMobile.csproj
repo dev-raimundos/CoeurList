@@ -59,12 +59,5 @@
         <PackageReference Include="MudBlazor" Version="9.7.0" />
     </ItemGroup>
 
-    <ItemGroup>
-        <ProjectReference Include="..\CoeurMobile.Application\CoeurMobile.Application.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="App\Modules\Pages\" />
-    </ItemGroup>
 
 </Project>

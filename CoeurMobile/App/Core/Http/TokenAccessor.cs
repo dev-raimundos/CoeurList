@@ -1,4 +1,4 @@
-namespace CoeurMobile.Application.Http;
+namespace CoeurMobile.App.Core.Http;
 
 public class TokenAccessor
 {
