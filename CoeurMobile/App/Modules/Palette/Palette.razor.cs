@@ -35,9 +35,29 @@ public partial class Palette
 
     private static readonly ToneRow[] ToneRows =
     [
-        new("Primary", [new("Lighten", "--mud-palette-primary-lighten"), new("Base", "--mud-palette-primary"), new("Darken", "--mud-palette-primary-darken")]),
-        new("Secondary", [new("Lighten", "--mud-palette-secondary-lighten"), new("Base", "--mud-palette-secondary"), new("Darken", "--mud-palette-secondary-darken")]),
-        new("Tertiary", [new("Lighten", "--mud-palette-tertiary-lighten"), new("Base", "--mud-palette-tertiary"), new("Darken", "--mud-palette-tertiary-darken")]),
-        new("Error", [new("Lighten", "--mud-palette-error-lighten"), new("Base", "--mud-palette-error"), new("Darken", "--mud-palette-error-darken")]),
+        new("Primary", [
+            new("Lighten", "--mud-palette-primary-lighten"),
+            new("Base", "--mud-palette-primary"),
+            new("Darken", "--mud-palette-primary-darken")
+            ]
+        ),
+        new("Secondary", [
+            new("Lighten", "--mud-palette-secondary-lighten"),
+            new("Base", "--mud-palette-secondary"),
+            new("Darken", "--mud-palette-secondary-darken")
+            ]
+        ),
+        new("Tertiary", [
+            new("Lighten", "--mud-palette-tertiary-lighten"),
+            new("Base", "--mud-palette-tertiary"),
+            new("Darken", "--mud-palette-tertiary-darken")
+            ]
+        ),
+        new("Error", [
+            new("Lighten", "--mud-palette-error-lighten"),
+            new("Base", "--mud-palette-error"),
+            new("Darken", "--mud-palette-error-darken")
+            ]
+        ),
     ];
 }

@@ -15,11 +15,6 @@
             <MudText Typo="Typo.body2" Class="login-subtitle">Entre para continuar</MudText>
         </div>
 
-        @if (_errorMessage is not null)
-        {
-            <MudAlert Severity="Severity.Error" Class="mb-4" Dense="true">@_errorMessage</MudAlert>
-        }
-
         <MudForm @ref="_form" Model="this">
             <MudTextField T="string"
                           @bind-Value="_email"
@@ -33,9 +28,9 @@
             <MudTextField T="string"
                           @bind-Value="_password"
                           Label="Senha"
-                          InputType="@_passwordInputType"
+                          InputType="@PasswordInputType"
                           Adornment="Adornment.End"
-                          AdornmentIcon="@_passwordAdornmentIcon"
+                          AdornmentIcon="@PasswordAdornmentIcon"
                           OnAdornmentClick="TogglePasswordVisibility"
                           Required="true"
                           RequiredError="Informe sua senha." />

@@ -6,9 +6,18 @@ public class MauiSecureSessionStore : ISecureSessionStore
 {
     private const string SessionStorageKey = "coeur_auth_session";
 
-    public Task<string?> GetAsync() => SecureStorage.Default.GetAsync(SessionStorageKey);
+    public Task<string?> GetAsync()
+    {
+        return SecureStorage.Default.GetAsync(SessionStorageKey);
+    }
 
-    public Task SetAsync(string value) => SecureStorage.Default.SetAsync(SessionStorageKey, value);
+    public Task SetAsync(string value)
+    {
+        return SecureStorage.Default.SetAsync(SessionStorageKey, value);
+    }
 
-    public void Remove() => SecureStorage.Default.Remove(SessionStorageKey);
+    public void Remove()
+    {
+        SecureStorage.Default.Remove(SessionStorageKey);
+    }
 }

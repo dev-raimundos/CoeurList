@@ -1,4 +1,3 @@
-using CoeurMobile.App.Core.Http;
 using CoeurMobile.App.Modules.Auth.Services;
 using CoeurMobile.App.Modules.Auth.Validation;
 using Microsoft.AspNetCore.Components;
@@ -19,15 +18,32 @@ public partial class Login
     private string _password = string.Empty;
     private bool _isPasswordVisible;
     private bool _isLoading;
-    private string? _errorMessage;
 
-    private InputType _passwordInputType => _isPasswordVisible ? InputType.Text : InputType.Password;
-    private string _passwordAdornmentIcon => _isPasswordVisible ? Icons.Material.Filled.VisibilityOff : Icons.Material.Filled.Visibility;
+    private InputType PasswordInputType
+    {
+        get
+        {
+            return _isPasswordVisible ? InputType.Text : InputType.Password;
+        }
+    }
 
-    private void TogglePasswordVisibility() => _isPasswordVisible = !_isPasswordVisible;
+    private string PasswordAdornmentIcon
+    {
+        get
+        {
+            return _isPasswordVisible ? Icons.Material.Filled.VisibilityOff : Icons.Material.Filled.Visibility;
+        }
+    }
+
+    private void TogglePasswordVisibility()
+    {
+        _isPasswordVisible = !_isPasswordVisible;
+    }
 
     private static string? ValidateEmail(string email)
-        => EmailValidator.HasValidFormat(email) ? null : "Email inválido.";
+    {
+        return EmailValidator.HasValidFormat(email) ? null : "Email inválido.";
+    }
 
     private async Task SubmitAsync()
     {
@@ -35,20 +51,15 @@ public partial class Login
         if (!_form.IsValid) return;
 
         _isLoading = true;
-        _errorMessage = null;
 
         try
         {
             await AuthService.LoginAsync(_email.Trim(), _password);
             NavigationManager.NavigateTo("/", replace: true);
         }
-        catch (CoeurApiException ex)
-        {
-            _errorMessage = ex.Message;
-        }
         catch (Exception)
         {
-            _errorMessage = "Não foi possível entrar. Tente novamente.";
+            // O toast com a mensagem de erro já foi disparado pelo ApiExceptionHandler.
         }
         finally
         {

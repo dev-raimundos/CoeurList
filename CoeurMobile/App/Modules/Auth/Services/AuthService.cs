@@ -1,6 +1,6 @@
 using System.Text.Json;
-using CoeurMobile.App.Core.Http;
-using CoeurMobile.App.Modules.Auth.Dtos;
+using CoeurMobile.App.Core.Http.Client;
+using CoeurMobile.App.Core.Http.Handlers;
 using CoeurMobile.App.Modules.Auth.Models;
 
 namespace CoeurMobile.App.Modules.Auth.Services;
@@ -22,11 +22,17 @@ public class AuthService
 
     public AuthSession? CurrentSession { get; private set; }
 
-    public bool IsAuthenticated => CurrentSession is not null;
+    public bool IsAuthenticated()
+    {
+       return CurrentSession is not null;
+    }
 
     public event Action? OnChange;
 
-    public Task EnsureInitializedAsync() => _initialization;
+    public Task EnsureInitializedAsync()
+    {
+        return _initialization;
+    }
 
     public async Task LoginAsync(string email, string password)
     {

@@ -3,10 +3,12 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.Extensions.Logging;
 using MudBlazor.Services;
 using CoeurMobile.App.Core.Config;
-using CoeurMobile.App.Core.Http;
+using CoeurMobile.App.Core.Http.Client;
+using CoeurMobile.App.Core.Http.Handlers;
 using CoeurMobile.App.Core.Services;
 using CoeurMobile.App.Modules.Auth.Platform;
 using CoeurMobile.App.Modules.Auth.Services;
+using CoeurMobile.App.Shared.Components.ToastListener;
 
 namespace CoeurMobile
 {
@@ -36,11 +38,15 @@ namespace CoeurMobile
             builder.Services.AddSingleton<TokenAccessor>();
             builder.Services.AddSingleton<ISecureSessionStore, MauiSecureSessionStore>();
             builder.Services.AddSingleton<AuthService>();
+            builder.Services.AddSingleton<IToastService, ToastService>();
             builder.Services.AddTransient<BearerTokenHandler>();
+            builder.Services.AddTransient<ApiExceptionHandler>();
             builder.Services.AddHttpClient<ICoeurApiClient, CoeurApiClient>(client =>
             {
                 client.BaseAddress = new Uri(AppConfig.ApiBaseUrl);
-            }).AddHttpMessageHandler<BearerTokenHandler>();
+            })
+                .AddHttpMessageHandler<BearerTokenHandler>()
+                .AddHttpMessageHandler<ApiExceptionHandler>();
 
 #if DEBUG
     		builder.Services.AddBlazorWebViewDeveloperTools();

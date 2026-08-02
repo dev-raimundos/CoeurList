@@ -24,7 +24,7 @@ public class CoeurAuthenticationStateProvider : AuthenticationStateProvider
 
     private AuthenticationState BuildAuthenticationState()
     {
-        if (!_authService.IsAuthenticated || _authService.CurrentSession is not { } session)
+        if (!_authService.IsAuthenticated() || _authService.CurrentSession is not { } session)
         {
             return new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity()));
         }

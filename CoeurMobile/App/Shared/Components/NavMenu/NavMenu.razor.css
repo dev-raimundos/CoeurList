@@ -59,6 +59,7 @@
     }
 
 .bottom-nav-icon {
+    margin-bottom: 0.1rem;
     position: relative;
     display: flex;
     width: 100%;

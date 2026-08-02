@@ -2,6 +2,7 @@
 @using MudBlazor
 @using CoeurMobile.App.Core.Services
 @using CoeurMobile.App.Core.Theme
+@using CoeurMobile.App.Shared.Components.ToastListener
 @inherits LayoutComponentBase
 @inject ThemeService ThemeService
 
@@ -9,6 +10,7 @@
 <MudPopoverProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
+<ToastListener />
 
 <div class="auth-shell">
     <div class="status-bar-safe-area"></div>
