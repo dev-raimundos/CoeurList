@@ -14,4 +14,7 @@ html, body {
 .app-content {
     padding-right: 1rem;
     padding-left: 1rem;
+    /* Reserva espaço pro bottom-nav (fixo, com margin-bottom de 1.5rem pra não invadir a barra
+       de navegação do Android), pra ele não cobrir o final do conteúdo das páginas. */
+    padding-bottom: 6rem;
 }

@@ -1,42 +1,31 @@
 @using Microsoft.AspNetCore.Components.Routing
 @using MudBlazor
-@using PointerEventArgs = Microsoft.AspNetCore.Components.Web.PointerEventArgs
 
 <div class="component-wrapper">
-    <nav class="bottom-nav" @ref="_navRef">
-        <div class="nav-indicator" @ref="_indicatorRef"></div>
-
-        <NavLink class="bottom-nav-item" href="home" Match="NavLinkMatch.All" @onpointerdown="@((PointerEventArgs e) => HandleRipple(0, e))">
-            <span class="bottom-nav-icon"><MudIcon Icon="@Icons.Material.Filled.Home" /></span>
-            <span class="bottom-nav-label"><b>Home</b></span>
-            @if (_rippleIndex == 0)
-            {
-                <span class="ripple" @key="_rippleSeq" style="left:@(_rippleX)px; top:@(_rippleY)px;"></span>
-            }
-        </NavLink>
-        <NavLink class="bottom-nav-item" href="palette" @onpointerdown="@((PointerEventArgs e) => HandleRipple(1, e))">
-            <span class="bottom-nav-icon"><MudIcon Icon="@Icons.Material.Filled.Palette" /></span>
-            <span class="bottom-nav-label"><b>Paleta</b></span>
-            @if (_rippleIndex == 1)
-            {
-                <span class="ripple" @key="_rippleSeq" style="left:@(_rippleX)px; top:@(_rippleY)px;"></span>
-            }
-        </NavLink>
-        <NavLink class="bottom-nav-item" href="weather" @onpointerdown="@((PointerEventArgs e) => HandleRipple(2, e))">
-            <span class="bottom-nav-icon"><MudIcon Icon="@Icons.Material.Filled.WbSunny" /></span>
-            <span class="bottom-nav-label"><b>Clima</b></span>
-            @if (_rippleIndex == 2)
-            {
-                <span class="ripple" @key="_rippleSeq" style="left:@(_rippleX)px; top:@(_rippleY)px;"></span>
-            }
-        </NavLink>
-        <NavLink class="bottom-nav-item" href="profile" @onpointerdown="@((PointerEventArgs e) => HandleRipple(3, e))">
-            <span class="bottom-nav-icon"><MudIcon Icon="@Icons.Material.Filled.Person" /></span>
-            <span class="bottom-nav-label"><b>Perfil</b></span>
-            @if (_rippleIndex == 3)
-            {
-                <span class="ripple" @key="_rippleSeq" style="left:@(_rippleX)px; top:@(_rippleY)px;"></span>
-            }
-        </NavLink>
+    <nav class="bottom-nav">
+        <MudNavLink Href="home" Match="NavLinkMatch.All" Class="bottom-nav-item">
+            <div class="bottom-nav-item-content">
+                <MudIcon Icon="@Icons.Material.Filled.Home" />
+                <span class="bottom-nav-label">Home</span>
+            </div>
+        </MudNavLink>
+        <MudNavLink Href="palette" Class="bottom-nav-item">
+            <div class="bottom-nav-item-content">
+                <MudIcon Icon="@Icons.Material.Filled.Palette" />
+                <span class="bottom-nav-label">Paleta</span>
+            </div>
+        </MudNavLink>
+        <MudNavLink Href="weather" Class="bottom-nav-item">
+            <div class="bottom-nav-item-content">
+                <MudIcon Icon="@Icons.Material.Filled.WbSunny" />
+                <span class="bottom-nav-label">Clima</span>
+            </div>
+        </MudNavLink>
+        <MudNavLink Href="profile" Class="bottom-nav-item">
+            <div class="bottom-nav-item-content">
+                <MudIcon Icon="@Icons.Material.Filled.Person" />
+                <span class="bottom-nav-label">Perfil</span>
+            </div>
+        </MudNavLink>
     </nav>
 </div>
