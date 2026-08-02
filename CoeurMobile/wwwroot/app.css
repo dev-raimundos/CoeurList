@@ -1,6 +1,10 @@
 html, body {
     margin: 0;
     padding: 0;
+    /* Evita o flash branco nativo do WebView durante transições de rota (ex.: indo pro 404) —
+       usa a cor de fundo do tema atual do MudBlazor quando disponível, com um fallback escuro
+       pra antes do MudBlazor terminar de aplicar o tema. */
+    background-color: var(--mud-palette-background, #000000);
 }
 
 .status-bar-safe-area {

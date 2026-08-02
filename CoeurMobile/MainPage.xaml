@@ -5,7 +5,7 @@
              xmlns:app="clr-namespace:CoeurMobile.App"
              x:Class="CoeurMobile.MainPage">
 
-    <BlazorWebView x:Name="blazorWebView" HostPage="wwwroot/index.html">
+    <BlazorWebView x:Name="blazorWebView" HostPage="wwwroot/index.html" BackgroundColor="Black">
         <BlazorWebView.RootComponents>
             <RootComponent Selector="#app" ComponentType="{x:Type app:Routes}" />
         </BlazorWebView.RootComponents>
