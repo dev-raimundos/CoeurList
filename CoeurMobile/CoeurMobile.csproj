@@ -63,4 +63,8 @@
         <ProjectReference Include="..\CoeurMobile.Application\CoeurMobile.Application.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="App\Modules\Pages\" />
+    </ItemGroup>
+
 </Project>
