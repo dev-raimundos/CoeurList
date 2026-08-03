@@ -71,7 +71,7 @@ public class ApiExceptionHandler(IToastService toastService, TokenAccessor token
         };
 
         toastService.Show(message, severity);
-        throw new CoeurApiException(message);
+        throw new CoeurApiException(message, response.StatusCode);
     }
 
     /// <summary>Só o pedacinho do <c>toast</c> que a API embute no Problem Details (<c>{ type, message }</c>).</summary>

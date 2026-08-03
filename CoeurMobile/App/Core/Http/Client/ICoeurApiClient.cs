@@ -22,4 +22,11 @@ public interface ICoeurApiClient
     /// (chamada assíncrona) — contendo os dados do usuário e o token.
     /// </returns>
     Task<AuthResponse> LoginAsync(string email, string password, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Chama <c>GET api/v1/auth/me</c> usando o token atual (anexado pelo <c>BearerTokenHandler</c>). Serve
+    /// pra confirmar que o token ainda é aceito pela API — se não for, a resposta é um 401 e o pipeline
+    /// (<c>ApiExceptionHandler</c>) já dispara o logout automático antes desta chamada sequer retornar.
+    /// </summary>
+    Task<MeResponse> GetMeAsync(CancellationToken cancellationToken = default);
 }

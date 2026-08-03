@@ -1,3 +1,5 @@
+using System.Net;
+
 namespace CoeurMobile.App.Core.Http.Client;
 
 /// <summary>
@@ -10,7 +12,13 @@ namespace CoeurMobile.App.Core.Http.Client;
 /// <remarks>
 /// <c>sealed</c> significa que esta classe não pode ser herdada — não faz sentido existir uma "subclasse"
 /// de uma exceção tão simples, então o compilador já barra isso de propósito.
-/// A sintaxe <c>(string message) : Exception(message)</c> é um construtor primário: recebe a mensagem e já
-/// repassa direto pro construtor da classe base (<see cref="Exception"/>), sem precisar escrever um corpo.
+/// A sintaxe <c>(string message, HttpStatusCode? statusCode = null) : Exception(message)</c> é um construtor
+/// primário: recebe a mensagem e já repassa direto pro construtor da classe base (<see cref="Exception"/>),
+/// sem precisar escrever um corpo. <see cref="StatusCode"/> vem separado (não dá pra repassar pro construtor
+/// da base) e existe pra quem precisa diferenciar o motivo da falha — ex.: <c>AuthService</c> só desloga o
+/// usuário automaticamente num 401 confirmado, não num erro de servidor qualquer.
 /// </remarks>
-public sealed class CoeurApiException(string message) : Exception(message);
+public sealed class CoeurApiException(string message, HttpStatusCode? statusCode = null) : Exception(message)
+{
+    public HttpStatusCode? StatusCode { get; } = statusCode;
+}
