@@ -6,7 +6,7 @@
 @using CoeurMobile.App.Modules.Auth
 
 <CascadingAuthenticationState>
-    <Router AppAssembly="typeof(MauiProgram).Assembly" NotFoundPage="typeof(NotFound)">
+    <Router AppAssembly="typeof(MauiProgram).Assembly" NotFoundPage="typeof(NotFound)" OnNavigateAsync="OnNavigateAsync">
         <Found Context="routeData">
             <AuthorizeRouteView RouteData="routeData" DefaultLayout="typeof(MainLayout)">
                 <Authorizing>
