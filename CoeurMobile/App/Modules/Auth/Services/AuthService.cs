@@ -32,7 +32,7 @@ public class AuthService
 
     public bool IsAuthenticated()
     {
-       return CurrentSession is not null;
+        return CurrentSession is not null;
     }
 
     public event Action? OnChange;

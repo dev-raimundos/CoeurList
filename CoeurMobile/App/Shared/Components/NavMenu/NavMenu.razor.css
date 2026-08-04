@@ -33,13 +33,13 @@
         transition: color 0.25s ease;
     }
 
-    .bottom-nav-item ::deep a.active {
-        color: var(--mud-palette-primary);
-    }
+        .bottom-nav-item ::deep a.active {
+            color: var(--mud-palette-primary);
+        }
 
-    .bottom-nav-item ::deep a.active svg {
-        transform: translateY(-1px) scale(1.1);
-    }
+            .bottom-nav-item ::deep a.active svg {
+                transform: translateY(-1px) scale(1.1);
+            }
 
     .bottom-nav-item ::deep svg {
         width: 1.1rem;
