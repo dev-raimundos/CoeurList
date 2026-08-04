@@ -1,4 +1,4 @@
-namespace CoeurMobile.App.Modules.Auth.Services;
+namespace CoeurMobile.App.Core.Services;
 
 public interface ISecureSessionStore
 {

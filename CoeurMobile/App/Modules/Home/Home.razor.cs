@@ -1,4 +1,4 @@
-using CoeurMobile.App.Modules.Auth.Services;
+using CoeurMobile.App.Core.Services;
 using Microsoft.AspNetCore.Components;
 
 namespace CoeurMobile.App.Modules.Home;

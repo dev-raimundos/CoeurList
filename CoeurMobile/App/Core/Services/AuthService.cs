@@ -2,9 +2,8 @@ using System.Net;
 using System.Text.Json;
 using CoeurMobile.App.Core.Http.Client;
 using CoeurMobile.App.Core.Http.Handlers;
-using CoeurMobile.App.Modules.Auth.Models;
 
-namespace CoeurMobile.App.Modules.Auth.Services;
+namespace CoeurMobile.App.Core.Services;
 
 public class AuthService
 {

@@ -1,5 +1,4 @@
 using System.Security.Claims;
-using CoeurMobile.App.Modules.Auth.Services;
 using Microsoft.AspNetCore.Components.Authorization;
 
 namespace CoeurMobile.App.Core.Services;

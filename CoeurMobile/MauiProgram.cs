@@ -5,9 +5,8 @@ using MudBlazor.Services;
 using CoeurMobile.App.Core.Config;
 using CoeurMobile.App.Core.Http.Client;
 using CoeurMobile.App.Core.Http.Handlers;
+using CoeurMobile.App.Core.Platform;
 using CoeurMobile.App.Core.Services;
-using CoeurMobile.App.Modules.Auth.Platform;
-using CoeurMobile.App.Modules.Auth.Services;
 using CoeurMobile.App.Shared.Components.ToastListener;
 
 namespace CoeurMobile

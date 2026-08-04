@@ -1,5 +1,4 @@
 using CoeurMobile.App.Core.Services;
-using CoeurMobile.App.Modules.Auth.Services;
 using Microsoft.AspNetCore.Components;
 
 namespace CoeurMobile.App.Modules.Profile;
