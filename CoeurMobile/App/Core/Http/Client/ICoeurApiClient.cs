@@ -29,4 +29,7 @@ public interface ICoeurApiClient
     /// (<c>ApiExceptionHandler</c>) já dispara o logout automático antes desta chamada sequer retornar.
     /// </summary>
     Task<MeResponse> GetMeAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>Chama <c>GET api/v1/users</c> — lista paginada de usuários, restrita a administradores.</summary>
+    Task<PagedResult<UserAccountResponse>> GetUsersAsync(CancellationToken cancellationToken = default);
 }

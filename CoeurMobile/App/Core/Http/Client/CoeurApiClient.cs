@@ -36,4 +36,12 @@ public class CoeurApiClient(HttpClient httpClient) : ICoeurApiClient
 
         return me ?? throw new CoeurApiException("Resposta vazia do endpoint /me.");
     }
+
+    /// <inheritdoc/>
+    public async Task<PagedResult<UserAccountResponse>> GetUsersAsync(CancellationToken cancellationToken = default)
+    {
+        var result = await httpClient.GetFromJsonAsync<PagedResult<UserAccountResponse>>("api/v1/users", cancellationToken);
+
+        return result ?? throw new CoeurApiException("Resposta vazia do endpoint de listagem de usuários.");
+    }
 }

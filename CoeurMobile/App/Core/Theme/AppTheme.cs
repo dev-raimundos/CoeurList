@@ -58,16 +58,6 @@ public static class AppTheme
             DarkLighten = "#575757",
             DarkDarken = "#2E2E2E",
 
-            // Fundos e superfícies (md-sys-color-background / surface)
-            Background = "#FFF8F5",
-            BackgroundGray = "#FBEBE2",
-            Surface = "#FFF8F5",
-            AppbarBackground = "#5F6135",
-            AppbarText = "#FFFFFF",
-            DrawerBackground = "#FFF1EA",
-            DrawerText = "#221A15",
-            DrawerIcon = "#52443B",
-
             // Texto e estados de ação (baseados em md-sys-color-on-surface)
             TextPrimary = "#221A15",
             TextSecondary = "#221A158A",
@@ -152,16 +142,6 @@ public static class AppTheme
             DarkContrastText = "#FFFFFF",
             DarkLighten = "#383843",
             DarkDarken = "#17171C",
-
-            // Fundos e superfícies (md-sys-color-background / surface)
-            Background = "#000000",
-            BackgroundGray = "#261E19",
-            Surface = "#19120D",
-            AppbarBackground = "#19120D",
-            AppbarText = "#F0DFD6B3",
-            DrawerBackground = "#261E19",
-            DrawerText = "#F0DFD680",
-            DrawerIcon = "#F0DFD680",
 
             // Texto e estados de ação (baseados em md-sys-color-on-surface)
             TextPrimary = "#F0DFD6B3",

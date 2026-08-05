@@ -2,7 +2,7 @@
 @page "/home"
 @using MudBlazor
 
-<MudText Typo="Typo.h4" Class="mb-1">Olá, @(AuthService.CurrentSession.Name ).</MudText>
+<MudText Typo="Typo.h4" Class="mb-1">Olá, @(AuthService.CurrentSession?.Name ?? "não definido" ).</MudText>
 <MudText Typo="Typo.body2" Class="mb-6" Style="opacity:0.7;">Bem-vindo de volta.</MudText>
 
 <MudText Typo="Typo.subtitle1" Class="mb-2">Botões</MudText>

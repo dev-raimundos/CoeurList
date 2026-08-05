@@ -1,0 +1,25 @@
+@page "/users"
+@using CoeurMobile.App.Core.Http.Client.Dtos
+@using MudBlazor
+
+<h1>Usuários</h1>
+
+@if (_isLoading)
+{
+    <MudProgressCircular Indeterminate="true" Color="Color.Primary" />
+}
+else if (_users.Count == 0)
+{
+    <MudText>Nenhum usuário encontrado.</MudText>
+}
+else
+{
+    @foreach (var user in _users)
+    {
+        <div @key="user.Id" class="user-row mb-2" @onclick="@(() => ShowUserDetailsAsync(user))">
+            <MudPaper Class="pa-3" Elevation="1">
+                <MudText>@user.Name</MudText>
+            </MudPaper>
+        </div>
+    }
+}

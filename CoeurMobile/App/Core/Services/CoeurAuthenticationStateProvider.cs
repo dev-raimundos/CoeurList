@@ -16,7 +16,7 @@ public class CoeurAuthenticationStateProvider : AuthenticationStateProvider
     public override async Task<AuthenticationState> GetAuthenticationStateAsync()
     {
         await _authService.EnsureInitializedAsync();
-        return BuildAuthenticationState();
+        return await BuildAuthenticationStateAsync();
     }
 
     private Task<AuthenticationState> BuildAuthenticationStateAsync() => Task.FromResult(BuildAuthenticationState());
