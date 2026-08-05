@@ -1,8 +1,6 @@
-using CoeurMobile.App.Core.Services;
+namespace CoeurMobile.App.Modules.Auth.Platform;
 
-namespace CoeurMobile.App.Core.Platform;
-
-public class MauiSecureSessionStore : ISecureSessionStore
+public class MauiSecureSessionStore
 {
     private const string SessionStorageKey = "coeur_auth_session";
 

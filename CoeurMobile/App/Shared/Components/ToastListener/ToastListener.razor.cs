@@ -6,7 +6,7 @@ namespace CoeurMobile.App.Shared.Components.ToastListener;
 
 /// <summary>
 /// Componente Blazor sem nenhum HTML próprio (o <c>.razor</c> correspondente está vazio) — sua única função é
-/// fazer a ponte entre o <see cref="IToastService"/> (que não sabe nada de UI) e o <see cref="ISnackbar"/> do
+/// fazer a ponte entre o <see cref="ToastService"/> (que não sabe nada de UI) e o <see cref="ISnackbar"/> do
 /// MudBlazor (que sabe desenhar o toast na tela). Precisa estar montado em algum lugar da árvore de
 /// componentes pra funcionar — por isso foi adicionado no <c>MainLayout</c> e no <c>AuthLayout</c>, os dois
 /// layouts usados pelo app.
@@ -18,7 +18,7 @@ public partial class ToastListener : IDisposable
     /// equivalente ao construtor injetado que as classes "normais" (fora do mundo de componentes) usam.
     /// </summary>
     [Inject]
-    protected IToastService ToastService { get; set; } = default!;
+    protected ToastService ToastService { get; set; } = default!;
 
     [Inject]
     protected ISnackbar Snackbar { get; set; } = default!;

@@ -6,5 +6,5 @@ namespace CoeurMobile.App.Modules.Home;
 public partial class Home
 {
     [Inject]
-    protected AuthService AuthService { get; set; } = default!;
+    protected IAuthService AuthService { get; set; } = default!;
 }

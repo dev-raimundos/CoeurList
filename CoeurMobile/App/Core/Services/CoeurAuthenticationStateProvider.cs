@@ -5,9 +5,9 @@ namespace CoeurMobile.App.Core.Services;
 
 public class CoeurAuthenticationStateProvider : AuthenticationStateProvider
 {
-    private readonly AuthService _authService;
+    private readonly IAuthService _authService;
 
-    public CoeurAuthenticationStateProvider(AuthService authService)
+    public CoeurAuthenticationStateProvider(IAuthService authService)
     {
         _authService = authService;
         _authService.OnChange += () => NotifyAuthenticationStateChanged(BuildAuthenticationStateAsync());

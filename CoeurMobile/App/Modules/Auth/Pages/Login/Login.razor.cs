@@ -1,4 +1,4 @@
-using CoeurMobile.App.Core.Services;
+using CoeurMobile.App.Modules.Auth.Services;
 using CoeurMobile.App.Modules.Auth.Validation;
 using Microsoft.AspNetCore.Components;
 using MudBlazor;

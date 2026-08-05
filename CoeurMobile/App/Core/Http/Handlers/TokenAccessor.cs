@@ -17,7 +17,7 @@ public class TokenAccessor
     /// Disparado pelo <see cref="ApiExceptionHandler"/> quando alguma chamada volta com <c>401 Unauthorized</c>
     /// — sinal de que o token salvo não é mais válido (expirou, foi revogado, etc.). O <c>AuthService</c> se
     /// inscreve nesse evento pra se auto-deslogar quando isso acontece, mesmo sem ninguém ter clicado em
-    /// "sair". Mesmo esquema de pub/sub do <see cref="Services.IToastService"/>, só que na direção contrária
+    /// "sair". Mesmo esquema de pub/sub do <see cref="Services.ToastService"/>, só que na direção contrária
     /// (dos <c>Handlers</c> pro <c>AuthService</c>, em vez do <c>AuthService</c> pros <c>Handlers</c> via <see cref="Token"/>).
     /// </summary>
     public event Action? OnUnauthorized;

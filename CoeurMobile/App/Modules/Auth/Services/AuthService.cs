@@ -2,17 +2,19 @@ using System.Net;
 using System.Text.Json;
 using CoeurMobile.App.Core.Http.Client;
 using CoeurMobile.App.Core.Http.Handlers;
+using CoeurMobile.App.Core.Services;
+using CoeurMobile.App.Modules.Auth.Platform;
 
-namespace CoeurMobile.App.Core.Services;
+namespace CoeurMobile.App.Modules.Auth.Services;
 
-public class AuthService
+public class AuthService : IAuthService
 {
-    private readonly ICoeurApiClient _apiClient;
+    private readonly AuthApiClient _apiClient;
     private readonly TokenAccessor _tokenAccessor;
-    private readonly ISecureSessionStore _sessionStore;
+    private readonly MauiSecureSessionStore _sessionStore;
     private readonly Task _initialization;
 
-    public AuthService(ICoeurApiClient apiClient, TokenAccessor tokenAccessor, ISecureSessionStore sessionStore)
+    public AuthService(AuthApiClient apiClient, TokenAccessor tokenAccessor, MauiSecureSessionStore sessionStore)
     {
         _apiClient = apiClient;
         _tokenAccessor = tokenAccessor;

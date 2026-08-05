@@ -1,6 +1,6 @@
-using CoeurMobile.App.Core.Http.Client;
-using CoeurMobile.App.Core.Http.Client.Dtos;
 using CoeurMobile.App.Modules.Users.Components.UserDetailsDialog;
+using CoeurMobile.App.Modules.Users.Dtos;
+using CoeurMobile.App.Modules.Users.Services;
 using Microsoft.AspNetCore.Components;
 using MudBlazor;
 
@@ -9,7 +9,7 @@ namespace CoeurMobile.App.Modules.Users;
 public partial class Users
 {
     [Inject]
-    protected ICoeurApiClient ApiClient { get; set; } = default!;
+    protected UsersApiClient ApiClient { get; set; } = default!;
 
     [Inject]
     protected IDialogService DialogService { get; set; } = default!;
@@ -17,6 +17,7 @@ public partial class Users
     // Guarda o UserAccountResponse inteiro (todos os campos que a API manda), mesmo a UI só exibindo o nome —
     // é o que chega da API, não só o que é renderizado.
     private List<UserAccountResponse> _users = [];
+
     private bool _isLoading = true;
 
     protected override async Task OnInitializedAsync()

@@ -16,7 +16,7 @@ public partial class Profile
     protected ThemeService ThemeService { get; set; } = default!;
 
     [Inject]
-    protected AuthService AuthService { get; set; } = default!;
+    protected IAuthService AuthService { get; set; } = default!;
 
     [Inject]
     protected NavigationManager NavigationManager { get; set; } = default!;

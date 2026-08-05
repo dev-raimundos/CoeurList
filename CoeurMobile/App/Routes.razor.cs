@@ -15,7 +15,7 @@ public partial class Routes : IDisposable
     private const string LoginRoute = "login";
 
     [Inject]
-    protected AuthService AuthService { get; set; } = default!;
+    protected IAuthService AuthService { get; set; } = default!;
 
     [Inject]
     protected NavigationManager NavigationManager { get; set; } = default!;

@@ -14,7 +14,7 @@ namespace CoeurMobile.App.Core.Http.Handlers;
 /// morto (<c>401</c>) e avisa o <see cref="TokenAccessor"/>, que por sua vez aciona o logout automático no
 /// <c>AuthService</c> — fechando o "guard" de navegação pra sessões com token expirado.
 /// </summary>
-public class ApiExceptionHandler(IToastService toastService, TokenAccessor tokenAccessor) : DelegatingHandler
+public class ApiExceptionHandler(ToastService toastService, TokenAccessor tokenAccessor) : DelegatingHandler
 {
     /// <summary>
     /// Deixa o request seguir (<c>base.SendAsync</c>) e depois confere o resultado: se a rede falhar
